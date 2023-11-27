@@ -6,8 +6,6 @@
         бизнеса
       </h1>
 
-      <Typed />
-
       <div
         class="contact"
         style="display: flex; align-items: center; gap: 50px"
@@ -30,13 +28,7 @@
   </div>
 </template>
 
-<script setup>
-import { Typed } from "../components/typed/index";
-
-components: {
-  Typed;
-}
-</script>
+<script setup></script>
 
 <style>
 h1 {
@@ -124,7 +116,7 @@ h1 {
 }
 
 @media screen and (max-width: 1400px) {
-  .img .heroImg{
+  .img .heroImg {
     height: 450px;
   }
 }
@@ -169,13 +161,13 @@ h1 {
 }
 
 @media screen and (max-width: 992px) {
-  .img .heroImg{
+  .img .heroImg {
     height: 450px;
   }
 }
 
 @media screen and (max-width: 776px) {
-  .img .heroImg{
+  .img .heroImg {
     height: 350px;
   }
 }
@@ -185,7 +177,7 @@ h1 {
     flex-direction: column;
     margin-bottom: 50px;
   }
-  .img .heroImg{
+  .img .heroImg {
     height: 300px;
   }
 }
