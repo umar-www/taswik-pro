@@ -10,7 +10,9 @@
           class="control"
           @click="handleClick(idx)"
         >
-          <li :class="{ active: currentIdx === idx }">{{ item }}</li>
+          <li :class="{ active: currentIdx === idx }">
+            {{ item }}
+          </li>
           <i
             :class="{ handleIcon: currentIdx === idx }"
             class="fa-regular fa-hand-pointer"
@@ -25,7 +27,12 @@
           class="control"
           @click="handleClick(idx)"
         >
-          <li :class="{ active: currentIdx === idx }">{{ item }}</li>
+          <li
+            @click="openControlPages(idx)"
+            :class="{ active: currentIdx === idx }"
+          >
+            {{ item }}
+          </li>
           <i
             :class="{ handleIcon: currentIdx === idx }"
             class="fa-regular fa-hand-pointer"
@@ -33,11 +40,24 @@
         </div>
       </ul>
     </div>
+
+    <div>
+      <Content v-if="openContentPage || currentIdx === 0" />
+      <Target v-if="openTargetPage || currentIdx === 1" />
+      <Reklama v-if="openReklamaPage || currentIdx === 2" />
+      <ProjectSpace v-if="openSpacePage || currentIdx === 3" />
+    </div>
   </div>
 </template>
 
 <script setup>
 import { ref } from "vue";
+import {
+  Content,
+  ProjectSpace,
+  Reklama,
+  Target,
+} from "../pages/ProjectControls/index";
 
 const controlTitle = [
   "Контент-менеджмент",
@@ -46,12 +66,43 @@ const controlTitle = [
   "Спец проекты",
 ];
 
+const openContentPage = ref(false);
+const openTargetPage = ref(false);
+const openSpacePage = ref(false);
+const openReklamaPage = ref(false);
+
 const currentIdx = ref(+localStorage.getItem("control"));
 
 const handleClick = (idx) => {
   localStorage.setItem("control", idx);
 
   currentIdx.value = idx;
+
+  if (currentIdx.value === 0) {
+    openContentPage.value = true;
+    openSpacePage.value = false;
+    openReklamaPage.value = false;
+    openTargetPage.value = false;
+  }
+  if (currentIdx.value === 1) {
+    openContentPage.value = false;
+    openTargetPage.value = true;
+    openReklamaPage.value = false;
+    openSpacePage.value = false;
+  }
+
+  if (currentIdx.value === 2) {
+    openContentPage.value = false;
+    openTargetPage.value = false;
+    openSpacePage.value = false;
+    openReklamaPage.value = true;
+  }
+  if (currentIdx.value === 3) {
+    openContentPage.value = false;
+    openTargetPage.value = false;
+    openReklamaPage.value = false;
+    openSpacePage.value = true;
+  }
 };
 </script>
 
@@ -65,10 +116,9 @@ const handleClick = (idx) => {
   font-weight: 600;
   text-align: center;
 }
-.controls .mobileControl{
+.controls .mobileControl {
   display: none;
 }
-
 
 .controls ul {
   margin-top: 50px;
@@ -140,15 +190,14 @@ ul .control .handleIcon {
 }
 
 @media screen and (max-width: 776px) {
-  .controls .desktopControl{
+  .controls .desktopControl {
     display: none;
   }
-  .controls .mobileControl{
+  .controls .mobileControl {
     display: block;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 50px;
   }
-  
 }
 </style>
