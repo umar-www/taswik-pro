@@ -106,7 +106,7 @@ h1 {
 }
 .ourNetwork i {
   font-size: 40px;
-  margin-right: 40px;
+  margin: 0px 15px;
   color: #000;
   cursor: pointer;
   transition: 0.3s;
@@ -169,6 +169,16 @@ h1 {
 @media screen and (max-width: 776px) {
   .img .heroImg {
     height: 350px;
+  }
+  
+  .about h1{
+    font-size: 40px;
+    margin-bottom: 20px;
+  }
+  
+  .contact button{
+    padding: 15px 40px;
+    font-size: 16px;
   }
 }
 

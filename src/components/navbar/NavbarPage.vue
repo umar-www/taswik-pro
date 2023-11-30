@@ -19,12 +19,10 @@
     <button v-if="burgerIcon" @click="toggleBurger" class="burgerBtn">
       <i class="fa-solid fa-bars"></i>
     </button>
-    
+
     <button v-else @click="toggleBurger" class="closeBtn">
       <i class="fa-solid fa-xmark"></i>
     </button>
-    
-
 
     <Transition name="burger">
       <div v-if="burger" class="burgerMain">
@@ -37,16 +35,18 @@
             />
 
             <ul class="mainBurger">
-              <li>О компании</li>
-              <li>Проекты</li>
-              <li>Направления</li>
-              <li>Обучение</li>
+              <li @click="toggleBurger">О компании</li>
+              <li @click="toggleBurger">Проекты</li>
+              <li @click="toggleBurger">Направления</li>
+              <li @click="toggleBurger">Обучение</li>
             </ul>
           </div>
 
           <div class="contactBurger">
-            <p>+998 (99) 999 99 99</p>
-            <p>Получить консультацию</p>
+            <a style="text-decoration: none;" href="tel:+998999999999">
+              <p @click="toggleBurger">+998 (99) 999 99 99</p>
+            </a>
+            <p @click="toggleBurger">Получить консультацию</p>
           </div>
         </div>
       </div>
@@ -63,6 +63,12 @@ const burgerIcon = ref(true);
 const toggleBurger = () => {
   burger.value = !burger.value;
   burgerIcon.value = !burgerIcon.value;
+
+  if (burger.value === true) {
+    document.body.style.overflow = "hidden";
+  } else {
+    document.body.style.overflow = "auto";
+  }
 };
 </script>
 
@@ -204,7 +210,8 @@ const toggleBurger = () => {
 }
 
 .burger,
-.burgerBtn, .closeBtn {
+.burgerBtn,
+.closeBtn {
   display: none;
 }
 
@@ -236,7 +243,8 @@ const toggleBurger = () => {
     display: none;
   }
 
-  .navbar .burgerBtn, .navbar .closeBtn {
+  .navbar .burgerBtn,
+  .navbar .closeBtn {
     background: none;
     font-size: 22px;
     color: rgba(251, 155, 60, 255);

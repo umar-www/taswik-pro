@@ -27,10 +27,7 @@
           class="control"
           @click="handleClick(idx)"
         >
-          <li
-            @click="openControlPages(idx)"
-            :class="{ active: currentIdx === idx }"
-          >
+          <li style="height: 50px; text-align: left;" :class="{ active: currentIdx === idx }">
             {{ item }}
           </li>
           <i
@@ -52,6 +49,7 @@
 
 <script setup>
 import { ref } from "vue";
+
 import {
   Content,
   ProjectSpace,
