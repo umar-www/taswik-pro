@@ -114,7 +114,7 @@ const handleClick = (idx) => {
   font-weight: 600;
   text-align: center;
 }
-.controls{
+.controls {
   padding: 0px 50px;
 }
 .controls .mobileControl {
@@ -177,6 +177,9 @@ ul .control .handleIcon {
 }
 
 @media screen and (max-width: 1200px) {
+  .ourProject {
+    margin-top: 100px;
+  }
   .ourProject h1 {
     font-size: 32px;
   }
@@ -187,6 +190,11 @@ ul .control .handleIcon {
 
   .control i {
     font-size: 22px;
+  }
+  @media screen and (max-height: 800px) {
+    .ourProject {
+      margin-top: 300px;
+    }
   }
 }
 
