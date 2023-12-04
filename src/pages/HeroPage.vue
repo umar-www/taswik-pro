@@ -3,8 +3,14 @@
     <div class="about">
       <h1>
         <span style="color: rgba(251, 155, 60, 255)">М</span>аркетинг двигатель
+        <br />
         бизнеса
       </h1>
+
+      <p>
+        Мы поможем вам
+        <span style="color: rgba(251, 155, 60, 255)" id="auto-write"></span>
+      </p>
 
       <div
         class="contact"
@@ -22,14 +28,26 @@
     </div>
 
     <div class="img">
-      <!-- <img src="../assets/images/123.png" alt="" /> -->
       <img class="bg" src="../assets/images/removeBg.png" alt="" />
       <img class="heroImg" src="../assets/images/heroImg.png" alt="" />
     </div>
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+document.addEventListener("DOMContentLoaded", function () {
+  const typed = new Typed("#auto-write", {
+    strings: [
+      "привлечь новых клиентов",
+      "привлечь целевую аудиторию",
+      "создать полный образ для вашей компании",
+    ],
+    typeSpeed: 70,
+    backSpeed: 50,
+    loop: true,
+  });
+});
+</script>
 
 <style>
 h1 {
@@ -67,8 +85,7 @@ h1 {
 .img .heroImg {
   width: 125%;
   height: 560px;
-  border-radius: 25%;
-  
+  border-radius: 30%;
 }
 
 .about h1 {
@@ -113,6 +130,11 @@ h1 {
   font-weight: 500;
   border-bottom: 2px solid #1f1f1f;
   cursor: pointer;
+  transition: 0.3s;
+}
+.contact span:hover {
+  color: rgba(251, 155, 60, 255);
+  border-bottom-color: rgba(251, 155, 60, 255);
 }
 
 .ourNetwork {
@@ -186,7 +208,7 @@ h1 {
   }
 
   .about h1 {
-    font-size: 40px;
+    font-size: 54px;
     margin-bottom: 20px;
   }
 
@@ -197,6 +219,9 @@ h1 {
 }
 
 @media screen and (max-width: 576px) {
+  .about h1 {
+    font-size: 48px;
+  }
   .contact {
     flex-direction: column;
     margin-bottom: 50px;
