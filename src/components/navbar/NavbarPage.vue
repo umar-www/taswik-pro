@@ -5,14 +5,16 @@
       <img class="logoText" src="../../assets/images/logoText.png" alt="" />
     </div>
     <ul class="main">
-      <li>О компании</li>
-      <li>Проекты</li>
-      <li>Направления</li>
-      <li>Обучение</li>
+      <li><a href="">О компании</a></li>
+      <li><a href="#ourProject">Проекты</a></li>
+      <li><a href="">Направления</a></li>
+      <li><a href="">Обучение</a></li>
     </ul>
 
     <div class="contact">
-      <p>+998 (99) 999 99 99</p>
+      <a style="text-decoration: none" href="tel:+998999999999">
+        <p>+998 (99) 999 99 99</p>
+      </a>
       <h2>Получить консультацию</h2>
     </div>
 
@@ -35,15 +37,15 @@
             />
 
             <ul class="mainBurger">
-              <li @click="toggleBurger">О компании</li>
-              <li @click="toggleBurger">Проекты</li>
-              <li @click="toggleBurger">Направления</li>
-              <li @click="toggleBurger">Обучение</li>
+              <li @click="toggleBurger"><a href="">О компании</a></li>
+              <li @click="toggleBurger"><a href="#ourProject">Проекты</a></li>
+              <li @click="toggleBurger"><a href="">Направления</a></li>
+              <li @click="toggleBurger"><a href="">Обучение</a></li>
             </ul>
           </div>
 
           <div class="contactBurger">
-            <a style="text-decoration: none;" href="tel:+998999999999">
+            <a style="text-decoration: none" href="tel:+998999999999">
               <p @click="toggleBurger">+998 (99) 999 99 99</p>
             </a>
             <p @click="toggleBurger">Получить консультацию</p>
@@ -126,7 +128,13 @@ const toggleBurger = () => {
   font-weight: 500;
 }
 
-.mainBurger li::after {
+.mainBurger li a {
+  text-decoration: none;
+  color: #fff;
+  transition: 0.3s;
+}
+
+.mainBurger li a::after {
   content: "";
   position: absolute;
   background: #fff;
@@ -138,7 +146,7 @@ const toggleBurger = () => {
   opacity: 0;
 }
 
-.mainBurger li:hover::after {
+.mainBurger li a:hover::after {
   width: 80%;
   opacity: 1;
 }
@@ -191,8 +199,13 @@ const toggleBurger = () => {
   cursor: pointer;
   transition: 0.3s;
 }
+.main li a {
+  text-decoration: none;
+  color: #000;
+  transition: 0.3s;
+}
 
-.navbar .main li:hover {
+.navbar .main li a:hover {
   color: rgba(251, 155, 60, 255);
 }
 
@@ -206,6 +219,7 @@ const toggleBurger = () => {
   margin-top: 20px;
   font-size: 14px;
   font-weight: bold;
+  color: #000;
   cursor: pointer;
 }
 

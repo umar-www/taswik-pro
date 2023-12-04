@@ -1,5 +1,5 @@
 <template>
-  <div class="ourProject">
+  <div id="ourProject" class="ourProject">
     <h1>Наши проекты</h1>
 
     <div class="controls">
@@ -27,7 +27,7 @@
           class="control"
           @click="handleClick(idx)"
         >
-          <li style="height: 50px; text-align: left;" :class="{ active: currentIdx === idx }">
+          <li :class="{ active: currentIdx === idx }">
             {{ item }}
           </li>
           <i
@@ -107,12 +107,15 @@ const handleClick = (idx) => {
 <style scoped>
 .ourProject {
   font-family: "Montserrat";
-  margin-top: 180px;
+  margin-top: 70px;
 }
 .ourProject h1 {
   font-size: 45px;
   font-weight: 600;
   text-align: center;
+}
+.controls{
+  padding: 0px 50px;
 }
 .controls .mobileControl {
   display: none;
@@ -196,6 +199,21 @@ ul .control .handleIcon {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 50px;
+    padding: 0;
+  }
+  .mobileControl .control li {
+    text-align: center;
+    height: 30px;
+  }
+}
+@media screen and (max-width: 576px) {
+  .controls .mobileControl {
+    grid-template-columns: 1fr;
+    gap: 0px;
+  }
+
+  .mobileControl {
+    margin: 0;
   }
 }
 </style>

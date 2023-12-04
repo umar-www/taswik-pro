@@ -22,6 +22,7 @@
     </div>
 
     <div class="img">
+      <!-- <img src="../assets/images/123.png" alt="" /> -->
       <img class="bg" src="../assets/images/removeBg.png" alt="" />
       <img class="heroImg" src="../assets/images/heroImg.png" alt="" />
     </div>
@@ -51,16 +52,23 @@ h1 {
   width: 100%;
 }
 
+.img img {
+  width: 100%;
+}
+
 .img .bg {
   position: absolute;
   bottom: 0;
-  width: 85%;
+  right: 0;
+  width: 70%;
   z-index: 1;
 }
 
 .img .heroImg {
   width: 125%;
   height: 560px;
+  border-radius: 25%;
+  
 }
 
 .about h1 {
@@ -88,10 +96,16 @@ h1 {
   border-radius: 5px;
   border: 2px solid #1f1f1f;
   transition: 0.3s;
+  box-shadow: -7px -7px 0px 0px #ccc;
 }
 
 .contact button:hover {
-  background: rgba(251, 155, 60, 255);
+  background: none;
+  border: 2px solid rgba(251, 155, 60, 255);
+  color: rgba(251, 155, 60, 255);
+}
+.contact button:active {
+  transform: scale(1.1);
 }
 
 .contact span {
@@ -170,13 +184,13 @@ h1 {
   .img .heroImg {
     height: 350px;
   }
-  
-  .about h1{
+
+  .about h1 {
     font-size: 40px;
     margin-bottom: 20px;
   }
-  
-  .contact button{
+
+  .contact button {
     padding: 15px 40px;
     font-size: 16px;
   }
