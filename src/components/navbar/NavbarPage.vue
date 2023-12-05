@@ -155,6 +155,7 @@ const toggleBurger = () => {
   color: #fff;
   font-size: 16px;
   font-weight: 500;
+  transform: 0.3s;
 }
 
 .navbar {
@@ -221,12 +222,21 @@ const toggleBurger = () => {
   font-weight: bold;
   color: #000;
   cursor: pointer;
+  transition: 0.3s;
+}
+
+.contact p:hover, .contact h2:hover {
+  color: rgba(251, 155, 60, 255);
 }
 
 .burger,
 .burgerBtn,
 .closeBtn {
   display: none;
+}
+
+.contactBurger a:hover {
+  color: rgba(251, 155, 60, 255);
 }
 
 @media screen and (max-width: 1400px) {

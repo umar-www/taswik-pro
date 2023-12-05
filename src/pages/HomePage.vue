@@ -6,17 +6,22 @@
   <div class="project">
     <ProjectPage />
   </div>
+  <Portfolio />
+  <div class="box"></div>
+  <OurWork />
 </template>
 
 <script>
 import { Navbar } from "../components/navbar/index";
-import { Hero, ProjectPage } from "./index";
+import { Hero, ProjectPage, Portfolio, OurWork } from "./index";
 
 export default {
   components: {
     Hero,
     Navbar,
     ProjectPage,
+    Portfolio,
+    OurWork,
   },
 };
 </script>
@@ -25,12 +30,12 @@ export default {
 .box {
   padding: 20px 180px;
 }
-.project{
-  padding: 20px 100px;
+.project {
+  padding: 20px 130px;
 }
 
 @media screen and (max-width: 1350px) {
-  .project{
+  .project {
     padding: 0px 30px;
   }
 }

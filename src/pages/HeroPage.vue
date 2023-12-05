@@ -1,35 +1,38 @@
 <template>
-  <div class="hero">
-    <div class="about">
-      <h1>
-        <span style="color: rgba(251, 155, 60, 255)">М</span>аркетинг двигатель
-        <br />
-        бизнеса
-      </h1>
+  <div class="container">
+    <div class="hero">
+      <div class="about">
+        <h1>
+          <span style="color: rgba(251, 155, 60, 255)">М</span>аркетинг
+          двигатель
+          <br />
+          бизнеса
+        </h1>
 
-      <p>
-        Мы поможем вам
-        <span style="color: rgba(251, 155, 60, 255)" id="auto-write"></span>
-      </p>
+        <p>
+          Мы поможем вам
+          <span style="color: rgba(251, 155, 60, 255)" id="auto-write"></span>
+        </p>
 
-      <div
-        class="contact"
-        style="display: flex; align-items: center; gap: 50px"
-      >
-        <button>Обсудить проект</button>
-        <span>Подробнее</span>
+        <div
+          class="contact"
+          style="display: flex; align-items: center; gap: 50px"
+        >
+          <button>Обсудить проект</button>
+          <span>Подробнее</span>
+        </div>
+
+        <div class="ourNetwork">
+          <i class="fa-brands fa-instagram"></i>
+          <i class="fa-brands fa-vk"></i>
+          <i class="fa-brands fa-facebook-f"></i>
+        </div>
       </div>
 
-      <div class="ourNetwork">
-        <i class="fa-brands fa-instagram"></i>
-        <i class="fa-brands fa-vk"></i>
-        <i class="fa-brands fa-facebook-f"></i>
+      <div class="img">
+        <img class="bg" src="../assets/images/removeBg.png" alt="" />
+        <img class="heroImg" src="../assets/images/heroImg.png" alt="" />
       </div>
-    </div>
-
-    <div class="img">
-      <img class="bg" src="../assets/images/removeBg.png" alt="" />
-      <img class="heroImg" src="../assets/images/heroImg.png" alt="" />
     </div>
   </div>
 </template>

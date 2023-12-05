@@ -1,48 +1,50 @@
 <template>
-  <div id="ourProject" class="ourProject">
-    <h1>Наши проекты</h1>
+  <div class="container">
+    <div id="ourProject" class="ourProject">
+      <h1>Наши проекты</h1>
 
-    <div class="controls">
-      <ul class="desktopControl">
-        <div
-          v-for="(item, idx) in controlTitle"
-          :key="idx"
-          class="control"
-          @click="handleClick(idx)"
-        >
-          <li :class="{ active: currentIdx === idx }">
-            {{ item }}
-          </li>
-          <i
-            :class="{ handleIcon: currentIdx === idx }"
-            class="fa-regular fa-hand-pointer"
-          ></i>
-        </div>
-      </ul>
+      <div class="controls">
+        <ul class="desktopControl">
+          <div
+            v-for="(item, idx) in controlTitle"
+            :key="idx"
+            class="control"
+            @click="handleClick(idx)"
+          >
+            <li :class="{ active: currentIdx === idx }">
+              {{ item }}
+            </li>
+            <i
+              :class="{ handleIcon: currentIdx === idx }"
+              class="fa-regular fa-hand-pointer"
+            ></i>
+          </div>
+        </ul>
 
-      <ul class="mobileControl">
-        <div
-          v-for="(item, idx) in controlTitle"
-          :key="idx"
-          class="control"
-          @click="handleClick(idx)"
-        >
-          <li :class="{ active: currentIdx === idx }">
-            {{ item }}
-          </li>
-          <i
-            :class="{ handleIcon: currentIdx === idx }"
-            class="fa-regular fa-hand-pointer"
-          ></i>
-        </div>
-      </ul>
-    </div>
+        <ul class="mobileControl">
+          <div
+            v-for="(item, idx) in controlTitle"
+            :key="idx"
+            class="control"
+            @click="handleClick(idx)"
+          >
+            <li :class="{ active: currentIdx === idx }">
+              {{ item }}
+            </li>
+            <i
+              :class="{ handleIcon: currentIdx === idx }"
+              class="fa-regular fa-hand-pointer"
+            ></i>
+          </div>
+        </ul>
+      </div>
 
-    <div>
-      <Content v-if="openContentPage || currentIdx === 0" />
-      <Target v-if="openTargetPage || currentIdx === 1" />
-      <Reklama v-if="openReklamaPage || currentIdx === 2" />
-      <ProjectSpace v-if="openSpacePage || currentIdx === 3" />
+      <div>
+        <Content v-if="openContentPage || currentIdx === 0" />
+        <Target v-if="openTargetPage || currentIdx === 1" />
+        <Reklama v-if="openReklamaPage || currentIdx === 2" />
+        <ProjectSpace v-if="openSpacePage || currentIdx === 3" />
+      </div>
     </div>
   </div>
 </template>
