@@ -177,26 +177,31 @@ export default {};
 }
 
 @media screen and (max-width: 776px) {
-  .ourWork {
-    height: 200vh;
+  .ourWork{
+    height: 220vh;
   }
   .ourWork .container h1 {
     font-size: 30px;
   }
   .about .aboutSection {
-    gap: 20px;
+    gap: 50px;
   }
 
   .aboutSection .flexContent {
     text-align: center;
     grid-template-columns: 1fr;
-    gap: 80px;
+    gap: 100px;
   }
   .flexContent .content {
     padding: 10px 60px;
   }
   .flexContent .content div {
     width: 100%;
+  }
+  @media screen and (max-height: 900px) {
+    .ourWork{
+      height: 260vh;
+    }
   }
 }
 </style>
