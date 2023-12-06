@@ -7,13 +7,13 @@
     <ProjectPage />
   </div>
   <Portfolio />
-  <div class="box"></div>
   <OurWork />
+  <AboutWe />
 </template>
 
 <script>
 import { Navbar } from "../components/navbar/index";
-import { Hero, ProjectPage, Portfolio, OurWork } from "./index";
+import { Hero, ProjectPage, Portfolio, OurWork, AboutWe } from "./index";
 
 export default {
   components: {
@@ -22,6 +22,7 @@ export default {
     ProjectPage,
     Portfolio,
     OurWork,
+    AboutWe,
   },
 };
 </script>

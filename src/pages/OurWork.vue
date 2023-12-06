@@ -1,5 +1,5 @@
 <template>
-  <div class="ourWork">
+  <div class="ourWork" id="our-work">
     <div class="container">
       <h1>
         <span style="color: rgba(251, 155, 60, 255)">М</span>ы
@@ -177,7 +177,7 @@ export default {};
 }
 
 @media screen and (max-width: 776px) {
-  .ourWork{
+  .ourWork {
     height: 220vh;
   }
   .ourWork .container h1 {
@@ -199,7 +199,7 @@ export default {};
     width: 100%;
   }
   @media screen and (max-height: 900px) {
-    .ourWork{
+    .ourWork {
       height: 260vh;
     }
   }
