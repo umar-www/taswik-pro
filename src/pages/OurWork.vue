@@ -198,10 +198,16 @@ export default {};
   .flexContent .content div {
     width: 100%;
   }
+
   @media screen and (max-height: 900px) {
     .ourWork {
       height: 260vh;
     }
+  }
+}
+@media screen and (max-width: 420px) {
+  .ourWork {
+    height: 290vh;
   }
 }
 </style>
