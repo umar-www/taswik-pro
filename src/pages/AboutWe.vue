@@ -1,12 +1,12 @@
 <template>
   <div class="aboutWorker">
     <h1>МЫ - это ТАСВИК</h1>
+    <div class="overlay1"></div>
 
     <div class="aboutWe">
       <button class="prevSlide" @click="prevSlide">
         <i class="fa-solid fa-chevron-left"></i>
       </button>
-
       <div class="owl-carousel owl-theme">
         <div class="item">
           <img src="../assets/images/boboy.png" alt="" />
@@ -73,6 +73,8 @@
           </div>
         </div>
       </div>
+      <div class="overlay2"></div>
+
       <button class="nextSlide" @click="nextSlide">
         <i class="fa-solid fa-chevron-right"></i>
       </button>
@@ -152,6 +154,7 @@ export default {
 .aboutWorker {
   margin-top: 100px;
   padding: 20px 80px;
+  position: relative;
 }
 .aboutWorker h1 {
   text-align: center;
@@ -166,24 +169,42 @@ export default {
   justify-content: space-between;
   position: relative;
 }
+
+.aboutWorker .overlay1 {
+  position: absolute;
+  width: 27.4%;
+  height: 90%;
+  backdrop-filter: blur(5px);
+  left: 0;
+  z-index: 9;
+}
+.aboutWorker .overlay2 {
+  position: absolute;
+  width: 24.8%;
+  height: 100%;
+  backdrop-filter: blur(5px);
+  top: 0;
+  right: 0;
+  z-index: 9;
+}
 .owl-carousel .item {
   padding: 20px 30px;
   border: 4px solid rgba(251, 155, 60, 255);
   /* text-align: center; */
 }
-.item img{
+.item img {
   object-fit: cover;
   width: 100%;
   height: 350px;
 }
-.item .aboutHuman{
+.item .aboutHuman {
   padding: 20px 0px;
 }
 .item .aboutHuman h2 {
   font-size: 35px;
   font-weight: bold;
 }
-.item .aboutHuman p{
+.item .aboutHuman p {
   font-size: 18px;
   font-weight: 400;
 }
@@ -193,7 +214,7 @@ export default {
   background: rgba(251, 155, 60, 255);
 }
 
-.aboutWe button{
+.aboutWe button {
   z-index: 10;
   position: absolute;
   width: 40px;
@@ -209,17 +230,45 @@ export default {
   border: none;
 }
 
-.aboutWe .prevSlide{
+.aboutWe .prevSlide {
   left: 10px;
 }
-.aboutWe .nextSlide{
+.aboutWe .nextSlide {
   right: 10px;
 }
 
-@media screen and (max-width: 1100px) {
-  .aboutWorker{
-    padding: 20px 30px;
+@media screen and (max-width: 1500px) {
+  .aboutWorker .overlay1 {
+    position: absolute;
+    width: 35%;
+    height: 90%;
+    backdrop-filter: blur(5px);
+    left: 0;
+    z-index: 9;
+  }
+  .aboutWorker .overlay2 {
+    position: absolute;
+    width: 33.5%;
+    height: 100%;
+    backdrop-filter: blur(5px);
+    top: 0;
+    right: 0;
+    z-index: 9;
   }
 }
 
+@media screen and (max-width: 1500px) {
+  .aboutWorker .overlay1 {
+    display: none;
+  }
+  .aboutWorker .overlay2 {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .aboutWorker {
+    padding: 20px 30px;
+  }
+}
 </style>
