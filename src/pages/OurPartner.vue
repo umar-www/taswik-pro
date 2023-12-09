@@ -45,11 +45,6 @@
       </div>
       <div class="slide-track">
         <div class="slide">
-          <img src="png" alt="rasm boaldi" />
-        </div>
-      </div>
-      <div class="slide-track">
-        <div class="slide">
           <img src="" alt="rasm boladi" />
         </div>
       </div>
@@ -90,7 +85,12 @@
       </div>
       <div class="slide-track">
         <div class="slide">
-          <img src="png" alt="rasm boladi" />
+          <img src="" alt="rasm boladi" />
+        </div>
+      </div>
+      <div class="slide-track">
+        <div class="slide">
+          <img src="" alt="rasm boladi" />
         </div>
       </div>
     </div>
