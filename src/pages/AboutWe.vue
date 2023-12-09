@@ -270,5 +270,8 @@ export default {
   .aboutWorker {
     padding: 20px 30px;
   }
+  .aboutWorker h1{
+    font-size: 33px;
+  }
 }
 </style>

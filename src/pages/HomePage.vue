@@ -9,11 +9,23 @@
   <Portfolio />
   <OurWork />
   <AboutWe />
+  <Partners />
+  <YouTube />
+  <Work />
 </template>
 
 <script>
 import { Navbar } from "../components/navbar/index";
-import { Hero, ProjectPage, Portfolio, OurWork, AboutWe } from "./index";
+import {
+  Hero,
+  ProjectPage,
+  Portfolio,
+  OurWork,
+  AboutWe,
+  Partners,
+  YouTube,
+  Work,
+} from "./index";
 
 export default {
   components: {
@@ -23,6 +35,9 @@ export default {
     Portfolio,
     OurWork,
     AboutWe,
+    Partners,
+    YouTube,
+    Work,
   },
 };
 </script>
