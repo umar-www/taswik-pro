@@ -39,7 +39,7 @@
             <ul class="mainBurger">
               <li @click="toggleBurger"><a href="">О компании</a></li>
               <li @click="toggleBurger"><a href="#ourProject">Проекты</a></li>
-              <li @click="toggleBurger"><a href="our-work">Направления</a></li>
+              <li @click="toggleBurger"><a href="#our-work">Направления</a></li>
               <li @click="toggleBurger"><a href="">Обучение</a></li>
             </ul>
           </div>
