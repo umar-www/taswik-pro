@@ -1,20 +1,26 @@
 <template>
   <h1>Вот, что о нас говорят:</h1>
 
-  <div v-if="isModalOpen" class="overlay" @click="closeModal">
-    <i @click="closeModal" class="fa-solid fa-x close"></i>
-    <div class="modal-content">
-      <div class="video-container">
-        <iframe
-          width="560"
-          height="315"
-          src="https://www.youtube-nocookie.com/embed/79iRoyNhlTQ?si=8soBVVXT2fAlh9Rr"
-          frameborder="0"
-          allowfullscreen
-        ></iframe>
+  <Transition name="v">
+    <div v-if="isModalOpen" class="overlay" @click="closeModal">
+      <i
+        style="font-weight: 300"
+        @click="closeModal"
+        class="fa-solid fa-x close"
+      ></i>
+      <div class="modal-content">
+        <div class="video-container">
+          <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube-nocookie.com/embed/BKJHlYekOpM?si=XN_8S-0dWo9E5xFN"
+            frameborder="0"
+            allowfullscreen
+          ></iframe>
+        </div>
       </div>
     </div>
-  </div>
+  </Transition>
 
   <div class="you-tube">
     <span>ВИДЕО ОТЗЫВЫ</span>
@@ -41,6 +47,15 @@ const closeModal = () => {
 </script>
 
 <style scoped>
+.v-enter-active,
+.v-leave-active {
+  transition: opacity 0.7s ease;
+}
+
+.v-enter-from,
+.v-leave-to {
+  opacity: 0;
+}
 h1 {
   text-align: center;
   font-size: 43px;
@@ -80,9 +95,9 @@ span {
   height: 100vh;
   overflow: auto;
   padding-top: 20px;
-  backdrop-filter: blur(5px);
-  background-color: rgb(0, 0, 0);
-  background-color: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(3px);
+  background-color: rgb(68, 68, 68);
+  background-color: rgba(89, 89, 89, 0.7);
 }
 
 .modal-content {
@@ -103,10 +118,8 @@ span {
 }
 .video-container {
   position: relative;
-  padding-bottom: 56.25%;
+  padding-bottom: 50.25%;
   padding-top: 30px;
-  border-radius: 10px;
-  /* height: 90vh; */
   overflow: hidden;
 }
 
