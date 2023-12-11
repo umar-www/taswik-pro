@@ -6,4 +6,5 @@ export { default as AboutWe } from "./AboutWe.vue";
 export { default as Partners } from "./OurPartner.vue";
 export { default as YouTube } from "./YouTube.vue";
 export { default as Work } from "./WorkPage.vue";
+export { default as FooterContact } from "./FooterContact.vue";
 export { default as Home } from "./HomePage.vue";

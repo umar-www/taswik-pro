@@ -12,6 +12,7 @@
   <Partners />
   <YouTube />
   <Work />
+  <FooterContact />
 </template>
 
 <script>
@@ -25,6 +26,7 @@ import {
   Partners,
   YouTube,
   Work,
+  FooterContact,
 } from "./index";
 
 export default {
@@ -38,6 +40,7 @@ export default {
     Partners,
     YouTube,
     Work,
+    FooterContact,
   },
 };
 </script>

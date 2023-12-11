@@ -104,6 +104,9 @@ const prevSlide = () => {
 
 .nextButton,
 .prevButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: absolute;
   top: 55%;
   font-size: 18px;
