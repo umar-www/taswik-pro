@@ -10,6 +10,7 @@
       <form @submit.prevent="handleSubmit">
         <div class="contact">
           <input
+            name="name"
             required
             v-model="userData.username"
             type="text"
@@ -80,9 +81,9 @@ const handleSubmit = async () => {
   const chatID = "-1002039957816";
   const info = `User: %0A<strong>Username:</strong> ${
     userData.value.username[0].toUpperCase() + userData.value.username.slice(1)
-  } %0A<strong>Phone Number:</strong> ${
-    userData.value.tel
-  } %0A<strong>Email address:</strong> ${userData.value.email}`;
+  }  %0A<strong>Phone Number:</strong> ${
+    userData.value.tel.slice(0, 4) + " " + userData.value.tel.slice(5)
+  }  %0A<strong>Email address:</strong> ${userData.value.email}`;
   const data = await axios.post(
     ` https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatID}&text=${info}&parse_mode=html`
   );
