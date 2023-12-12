@@ -15,7 +15,6 @@
       <a style="text-decoration: none" href="tel:+998999999999">
         <p>+998 (99) 999 99 99</p>
       </a>
-      <h2>Получить консультацию</h2>
     </div>
 
     <button v-if="burgerIcon" @click="toggleBurger" class="burgerBtn">

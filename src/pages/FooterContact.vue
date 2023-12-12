@@ -16,11 +16,19 @@
             placeholder="Ваше имя"
           />
           <input
+            name="phoneNumber"
             required
             v-model="userData.tel"
             type="text"
             placeholder="Телефон"
             maxlength="20"
+          />
+          <input
+            required
+            name="email"
+            v-model="userData.email"
+            type="email"
+            placeholder="Е-mail"
           />
         </div>
         <button class="sendBtn">Отправить заявку</button>
@@ -64,19 +72,24 @@ import { useToast } from "vue-toastification";
 import axios from "axios";
 import { ref } from "vue";
 
-const userData = ref({ username: "", tel: "" });
+const userData = ref({ username: "", tel: null, email: "" });
 const toast = useToast();
 
 const handleSubmit = async () => {
   const token = "6719463782:AAEcFhZ0cNkq1HLHkuvooP28GGYaoUo4yV0";
   const chatID = "-1002039957816";
-  const info = `User: %0A<strong>Username:</strong> ${userData.value.username} %0A<strong>Phone Number:</strong> ${userData.value.tel}`;
+  const info = `User: %0A<strong>Username:</strong> ${
+    userData.value.username[0].toUpperCase() + userData.value.username.slice(1)
+  } %0A<strong>Phone Number:</strong> ${
+    userData.value.tel
+  } %0A<strong>Email address:</strong> ${userData.value.email}`;
   const data = await axios.post(
     ` https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatID}&text=${info}&parse_mode=html`
   );
 
   userData.value.tel = "";
   userData.value.username = "";
+  userData.value.email = "";
 
   if (data.status === 200) {
     toast.success("Your information successfully send");
@@ -233,6 +246,9 @@ const handleSubmit = async () => {
   .webSiteAbout {
     grid-template-columns: repeat(2, 1fr);
     height: 90px;
+  }
+  .contact {
+    flex-direction: column;
   }
   .webSiteAbout p {
     font-size: 14px;
