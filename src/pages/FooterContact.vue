@@ -7,11 +7,24 @@
         инструментов.
       </p>
 
-      <div class="contact">
-        <input type="text" placeholder="Ваше имя" />
-        <input type="text" placeholder="Телефон" />
-      </div>
-      <button class="sendBtn">Отправить заявку</button>
+      <form @submit.prevent="handleSubmit">
+        <div class="contact">
+          <input
+            required
+            v-model="userData.username"
+            type="text"
+            placeholder="Ваше имя"
+          />
+          <input
+            required
+            v-model="userData.tel"
+            type="text"
+            placeholder="Телефон"
+            maxlength="20"
+          />
+        </div>
+        <button class="sendBtn">Отправить заявку</button>
+      </form>
 
       <div class="check">
         <div class="checkBox">
@@ -46,8 +59,31 @@
   </div>
 </template>
 
-<script>
-export default {};
+<script setup>
+import { useToast } from "vue-toastification";
+import axios from "axios";
+import { ref } from "vue";
+
+const userData = ref({ username: "", tel: "" });
+const toast = useToast();
+
+const handleSubmit = async () => {
+  const token = "6719463782:AAEcFhZ0cNkq1HLHkuvooP28GGYaoUo4yV0";
+  const chatID = "-1002039957816";
+  const info = `User: %0A<strong>Username:</strong> ${userData.value.username} %0A<strong>Phone Number:</strong> ${userData.value.tel}`;
+  const data = await axios.post(
+    ` https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatID}&text=${info}&parse_mode=html`
+  );
+
+  userData.value.tel = "";
+  userData.value.username = "";
+
+  if (data.status === 200) {
+    toast.success("Your information successfully send");
+  } else {
+    toast.error("Your information was not sent successfully");
+  }
+};
 </script>
 
 <style scoped>
@@ -69,7 +105,7 @@ export default {};
   color: rgba(251, 155, 60, 255);
   transition: 0.3s;
 }
-.webSiteAbout p:hover{
+.webSiteAbout p:hover {
   color: #fff;
 }
 .footer {
@@ -198,7 +234,7 @@ export default {};
     grid-template-columns: repeat(2, 1fr);
     height: 90px;
   }
-  .webSiteAbout p{
+  .webSiteAbout p {
     font-size: 14px;
   }
 }
