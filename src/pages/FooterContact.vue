@@ -23,6 +23,7 @@
             type="text"
             placeholder="Телефон"
             maxlength="20"
+            minlength="9"
           />
           <input
             required
@@ -77,12 +78,16 @@ const userData = ref({ username: "", tel: null, email: "" });
 const toast = useToast();
 
 const handleSubmit = async () => {
+  const formattedTel = userData.value.tel.trim()
+    ? userData.value.tel.trim().replace(/[ ,()-]/g, "")
+    : "Telefon raqami yo'q";
+
   const token = "6719463782:AAEcFhZ0cNkq1HLHkuvooP28GGYaoUo4yV0";
   const chatID = "-1002039957816";
   const info = `User: %0A<strong>Username:</strong> ${
     userData.value.username[0].toUpperCase() + userData.value.username.slice(1)
   }  %0A<strong>Phone Number:</strong> ${
-    userData.value.tel.slice(0, 4) + " " + userData.value.tel.slice(5)
+    formattedTel.length === 13 ? formattedTel.slice(4) : formattedTel
   }  %0A<strong>Email address:</strong> ${userData.value.email}`;
   const data = await axios.post(
     ` https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatID}&text=${info}&parse_mode=html`
@@ -251,6 +256,9 @@ const handleSubmit = async () => {
   .contact {
     flex-direction: column;
   }
+  .contact input{
+    width: 80%;
+  }
   .webSiteAbout p {
     font-size: 14px;
   }
@@ -258,6 +266,9 @@ const handleSubmit = async () => {
 @media screen and (max-width: 576px) {
   .left .sendBtn {
     margin-top: 0px;
+  }
+  .contact input{
+    width: 100%;
   }
 }
 </style>
