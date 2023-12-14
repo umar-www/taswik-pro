@@ -1,8 +1,8 @@
 <template>
   <div class="navbar">
     <div class="logo">
-      <img class="logoImg" src="../../assets/images/logo.jpg" alt="" />
-      <h4
+      <!-- <img class="logoImg" src="../../assets/images/logo.jpg" alt="" /> -->
+      <!-- <h4
         style="
           margin-top: 20px;
           color: rgba(251, 155, 60, 255);
@@ -10,8 +10,8 @@
         "
       >
         Taswik
-      </h4>
-      <!-- <img class="logoText" src="../../assets/images/logoText.png" alt="" /> -->
+      </h4> -->
+      <img class="logoText" src="../../assets/images/logoText.png" alt="" />
     </div>
     <ul class="main">
       <li><a href="">О компании</a></li>
@@ -177,9 +177,9 @@ const toggleBurger = () => {
   margin-right: 150px;
   cursor: pointer;
   position: relative;
-  display: flex;
+  /* display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 10px; */
 }
 .logo .logoText {
   width: 110px;
