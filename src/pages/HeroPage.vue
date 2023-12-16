@@ -19,7 +19,7 @@
           style="display: flex; align-items: center; gap: 50px"
         >
           <button>Обсудить проект</button>
-          <span>Подробнее</span>
+          <span><a href="#company">Подробнее</a></span>
         </div>
 
         <div class="ourNetwork">
@@ -59,6 +59,7 @@ h1 {
 }
 
 .hero {
+  
   margin-top: 50px;
   height: 85vh;
   display: grid;
@@ -83,12 +84,14 @@ h1 {
   right: 0;
   width: 70%;
   z-index: 1;
+  filter: drop-shadow(20px -7px 5px #fff);
 }
 
 .img .heroImg {
   width: 125%;
   height: 560px;
   border-radius: 30%;
+  
 }
 
 .about h1 {
@@ -127,7 +130,10 @@ h1 {
 .contact button:active {
   transform: scale(1.1);
 }
-
+.contact a {
+  text-decoration: none;
+  color: inherit;
+}
 .contact span {
   font-size: 18px;
   font-weight: 500;

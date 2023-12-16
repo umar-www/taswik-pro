@@ -17,7 +17,7 @@
       <li><a href="#company">О компании</a></li>
       <li><a href="#ourProject">Проекты</a></li>
       <li><a href="#our-work">Направления</a></li>
-      <li><a href="">Обучение</a></li>
+      <li><a href="#contact">Контакт</a></li>
     </ul>
 
     <div class="contact">
@@ -38,17 +38,13 @@
       <div v-if="burger" class="burgerMain">
         <div class="bg">
           <div class="logo">
-            <img
-              class="logoBurger"
-              src="../../assets/images/logoBurger.png"
-              alt=""
-            />
+            <img class="logoImg" src="../../assets/images/logo.jpg" alt="" />
 
             <ul class="mainBurger">
               <li @click="toggleBurger"><a href="#company">О компании</a></li>
               <li @click="toggleBurger"><a href="#ourProject">Проекты</a></li>
               <li @click="toggleBurger"><a href="#our-work">Направления</a></li>
-              <li @click="toggleBurger"><a href="">Обучение</a></li>
+              <li @click="toggleBurger"><a href="#contact">Контакт</a></li>
             </ul>
           </div>
 

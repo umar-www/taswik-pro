@@ -1,5 +1,5 @@
 <template>
-  <div class="footer">
+  <div id="contact" class="footer">
     <div class="left">
       <h1>Новые решения в маркетинге</h1>
       <p>
