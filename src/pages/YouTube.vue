@@ -130,7 +130,7 @@ span {
   width: 100%;
   height: 100%;
 }
-
+/* 
 @keyframes spin {
   0% {
     transform: rotate(0deg);
@@ -147,7 +147,7 @@ span {
   100% {
     transform: rotate(-360deg);
   }
-}
+} */
 
 .animation-container {
   display: inline-block;

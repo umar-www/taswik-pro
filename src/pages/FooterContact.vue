@@ -32,6 +32,12 @@
             type="email"
             placeholder="Е-mail"
           />
+          <input
+            name="text"
+            v-model="userData.telegram"
+            type="text"
+            placeholder="Telegram @... (optional)"
+          />
         </div>
         <button class="sendBtn">Отправить заявку</button>
       </form>
@@ -74,7 +80,7 @@ import { useToast } from "vue-toastification";
 import axios from "axios";
 import { ref } from "vue";
 
-const userData = ref({ username: "", tel: null, email: "" });
+const userData = ref({ username: "", tel: null, email: "", telegram: "" });
 const toast = useToast();
 
 const handleSubmit = async () => {
@@ -84,11 +90,13 @@ const handleSubmit = async () => {
 
   const token = "6719463782:AAEcFhZ0cNkq1HLHkuvooP28GGYaoUo4yV0";
   const chatID = "-1002039957816";
-  const info = `User: %0A<strong>Username:</strong> ${
+  const info = `<strong>TASWIK ROBOT🤖</strong>:%0A<strong>Username👤:</strong> ${
     userData.value.username[0].toUpperCase() + userData.value.username.slice(1)
-  }  %0A<strong>Phone Number:</strong> ${
+  } %0A<strong>Phone Number☎️:</strong>${
     formattedTel.length === 13 ? formattedTel.slice(4) : formattedTel
-  }  %0A<strong>Email address:</strong> ${userData.value.email}`;
+  }%0A<strong>Email📩:</strong> ${
+    userData.value.email
+  }%0A<strong>Tg username🚀:</strong> ${userData.value.telegram}`;
   const data = await axios.post(
     ` https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatID}&text=${info}&parse_mode=html`
   );
@@ -96,6 +104,7 @@ const handleSubmit = async () => {
   userData.value.tel = "";
   userData.value.username = "";
   userData.value.email = "";
+  userData.value.telegram = "";
 
   if (data.status === 200) {
     toast.success("Your information successfully send");
@@ -157,18 +166,19 @@ const handleSubmit = async () => {
 }
 
 .contact {
-  display: flex;
-  align-items: center;
+  display: grid;
+  /* align-items: center; */
+  grid-template-columns: repeat(3, 1fr);
   gap: 30px;
   margin-top: 80px;
 }
-.contact input {
+form input {
   padding: 20px 0px 20px 20px;
   border-radius: 5px;
   border: 1px solid rgba(251, 155, 60, 255);
   transition: 0.3s;
 }
-.contact input:focus {
+input:focus {
   /* outline: 1px solid rgba(251, 155, 60, 255); */
   box-shadow: 1px -1px 10px 2px rgba(251, 155, 60, 255);
   outline: none;
@@ -254,9 +264,10 @@ const handleSubmit = async () => {
     height: 90px;
   }
   .contact {
-    flex-direction: column;
+    grid-template-columns: 1fr;
+    place-items: center;
   }
-  .contact input{
+  .contact input {
     width: 80%;
   }
   .webSiteAbout p {
@@ -267,7 +278,7 @@ const handleSubmit = async () => {
   .left .sendBtn {
     margin-top: 0px;
   }
-  .contact input{
+  .contact input {
     width: 100%;
   }
 }

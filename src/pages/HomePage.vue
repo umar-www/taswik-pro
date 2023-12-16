@@ -3,6 +3,7 @@
   <div class="box">
     <Hero />
   </div>
+  <Company />
   <div class="project">
     <ProjectPage />
   </div>
@@ -27,6 +28,7 @@ import {
   YouTube,
   Work,
   FooterContact,
+  Company,
 } from "./index";
 
 export default {
@@ -41,6 +43,7 @@ export default {
     YouTube,
     Work,
     FooterContact,
+    Company,
   },
 };
 </script>

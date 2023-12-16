@@ -1,7 +1,7 @@
 <template>
   <div class="navbar">
     <div class="logo">
-      <!-- <img class="logoImg" src="../../assets/images/logo.jpg" alt="" /> -->
+      <img class="logoImg" src="../../assets/images/logo.jpg" alt="" />
       <!-- <h4
         style="
           margin-top: 20px;
@@ -11,10 +11,10 @@
       >
         Taswik
       </h4> -->
-      <img class="logoText" src="../../assets/images/logoText.png" alt="" />
+      <!-- <img class="logoText" src="../../assets/images/logoText.png" alt="" /> -->
     </div>
     <ul class="main">
-      <li><a href="">О компании</a></li>
+      <li><a href="#company">О компании</a></li>
       <li><a href="#ourProject">Проекты</a></li>
       <li><a href="#our-work">Направления</a></li>
       <li><a href="">Обучение</a></li>
@@ -45,7 +45,7 @@
             />
 
             <ul class="mainBurger">
-              <li @click="toggleBurger"><a href="">О компании</a></li>
+              <li @click="toggleBurger"><a href="#company">О компании</a></li>
               <li @click="toggleBurger"><a href="#ourProject">Проекты</a></li>
               <li @click="toggleBurger"><a href="#our-work">Направления</a></li>
               <li @click="toggleBurger"><a href="">Обучение</a></li>
@@ -56,7 +56,6 @@
             <a style="text-decoration: none" href="tel:+998999999999">
               <p @click="toggleBurger">+998 (99) 999 99 99</p>
             </a>
-            <p @click="toggleBurger">Получить консультацию</p>
           </div>
         </div>
       </div>

@@ -193,11 +193,6 @@ ul .control .handleIcon {
   .control i {
     font-size: 22px;
   }
-  @media screen and (max-height: 800px) {
-    .ourProject {
-      margin-top: 300px;
-    }
-  }
 }
 
 @media screen and (max-width: 776px) {
