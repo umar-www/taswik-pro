@@ -276,7 +276,7 @@ input:focus {
 }
 @media screen and (max-width: 576px) {
   .left .sendBtn {
-    margin-top: 0px;
+    margin-top: 40px;
   }
   .contact input {
     width: 100%;
