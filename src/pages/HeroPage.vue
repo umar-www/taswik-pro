@@ -55,9 +55,7 @@
       <div class="about">
         <h1>
           <span style="color: rgba(251, 155, 60, 255)">М</span>аркетинг
-          двигатель
-          <br />
-          бизнеса
+          двигатель бизнеса
         </h1>
 
         <p>
@@ -74,7 +72,9 @@
         </div>
 
         <div class="ourNetwork">
-          <i class="fa-brands fa-instagram"></i>
+          <a href="https://www.instagram.com/taswik.uz/">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
           <i class="fa-brands fa-vk"></i>
           <i class="fa-brands fa-facebook-f"></i>
         </div>
@@ -248,7 +248,7 @@ form .sendBtn {
   height: 85vh;
   display: grid;
   align-items: center;
-  grid-template-columns: 1.2fr 1.3fr;
+  grid-template-columns: 1.2fr 1.4fr;
   gap: 40px;
   /* padding: 20px 180px; */
 }

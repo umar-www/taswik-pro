@@ -56,7 +56,12 @@
   <div class="webSiteAbout">
     <p>
       <i class="fa-brands fa-instagram"></i>
-      <a style="text-decoration: none; color: inherit" href=""> Instagram </a>
+      <a
+        style="text-decoration: none; color: inherit"
+        href="https://www.instagram.com/taswik.uz/"
+      >
+        Instagram
+      </a>
     </p>
     <p>
       <i class="fa-brands fa-telegram"></i>

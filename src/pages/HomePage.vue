@@ -16,7 +16,7 @@
   <FooterContact />
 </template>
 
-<script>
+<script setup>
 import { useHead } from "@vueuse/head";
 import { Navbar } from "../components/navbar/index";
 import {
@@ -31,22 +31,6 @@ import {
   FooterContact,
   Company,
 } from "./index";
-
-export default {
-  components: {
-    Hero,
-    Navbar,
-    ProjectPage,
-    Portfolio,
-    OurWork,
-    AboutWe,
-    Partners,
-    YouTube,
-    Work,
-    FooterContact,
-    Company,
-  },
-};
 
 useHead({
   meta: [
