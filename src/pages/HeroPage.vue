@@ -154,7 +154,7 @@ document.addEventListener("DOMContentLoaded", function () {
 <style scoped>
 .v-enter-active,
 .v-leave-active {
-  transition: opacity 0.7s ease;
+  transition: opacity 0.5s ease;
 }
 
 .v-enter-from,
@@ -248,7 +248,7 @@ form .sendBtn {
   height: 85vh;
   display: grid;
   align-items: center;
-  grid-template-columns: 1.1fr 1fr;
+  grid-template-columns: 1.2fr 1.3fr;
   gap: 40px;
   /* padding: 20px 180px; */
 }
