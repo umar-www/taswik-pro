@@ -17,7 +17,6 @@
 </template>
 
 <script setup>
-import { useHead } from "@vueuse/head";
 import { Navbar } from "../components/navbar/index";
 import {
   Hero,
@@ -31,20 +30,6 @@ import {
   FooterContact,
   Company,
 } from "./index";
-
-useHead({
-  meta: [
-    {
-      name: "description",
-      content: "",
-    },
-    {
-      name: "keywords",
-      content:
-        "marketing, target, company, uz, ru, en, MARKETING, COMPANY, TARGET, taswik, TASWIK, Taswik",
-    },
-  ],
-});
 </script>
 
 <style scoped>
