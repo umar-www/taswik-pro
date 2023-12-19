@@ -121,7 +121,11 @@ const handleSubmit = async () => {
     formattedTel.length === 13 ? formattedTel.slice(4) : formattedTel
   }%0A<strong>Email📩:</strong> ${
     userData.value.email
-  }%0A<strong>Tg username🚀:</strong> ${userData.value.telegram}`;
+  }%0A<strong>Tg username🚀:</strong> ${
+    userData.value.telegram === ""
+      ? "Username kiritmadi"
+      : userData.value.telegram
+  }`;
   const data = await axios.post(
     ` https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatID}&text=${info}&parse_mode=html`
   );
